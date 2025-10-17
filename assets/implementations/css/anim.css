@@ -1,0 +1,15 @@
+/* ===== IMPLEMENTATION-SPECIFIC ANIMATION APPLICATIONS ===== */
+
+/* Intro child elements */
+.intro img {
+  animation: fadeInUp 0.8s ease-out 0.3s both;
+}
+
+.intro .registration-button {
+  animation: fadeInUp 0.8s ease-out 0.8s both;
+}
+
+/* Form micro-interactions */
+.form-container input[type="email"] {
+  animation: subtlePulse 2s infinite;
+}

@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<meta name="description" content="ESC Cardio-Genomics 2025 — Oral Presentation Upload" />
+	<title>ESC Cardio-Genomics 2025 — Presentation Upload</title>
+
+	<!-- Favicon -->
+	<link rel="icon" href="../assets/implementations/media/apple-touch-icon.png" />
+	<link rel="apple-touch-icon" href="../assets/implementations/media/apple-touch-icon.png" />
+
+	<!-- Open Graph -->
+	<meta property="og:title" content="ESC Cardio-Genomics 2025 — Presentation Upload" />
+	<meta property="og:description" content="Upload your oral presentation file and session details." />
+	<meta property="og:image" content="https://dev.plura.pt/esc/cardio-genomics-2025/assets/implementations/media/intro/ESC_Image_5000x2813_Lisbon_2025_optimized.png" />
+	<meta property="og:url" content="https://dev.plura.pt/esc/cardio-genomics-2025/presentation-upload/" />
+	<meta property="og:type" content="website" />
+
+	<!-- Google Fonts -->
+	<link rel="preconnect" href="https://fonts.googleapis.com" />
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+	<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet" />
+
+	<!-- Core CSS -->
+	<link rel="stylesheet" href="../assets/core/css/styles.css" />
+	<link rel="stylesheet" href="../assets/core/css/anim.css" />
+
+	<!-- Global Components CSS -->
+	<link rel="stylesheet" href="../assets/implementations/css/intro.css" />
+	<link rel="stylesheet" href="../assets/implementations/css/anim.css" />
+
+	<!-- Page CSS -->
+	<link rel="stylesheet" href="css/style.css" />
+</head>
+
+<body>
+	<div id="app">
+		<!-- Intro (mobile-first reveal) -->
+		<div class="intro">
+			<img
+				src="../assets/implementations/media/intro/ESC_Image_5000x2813_Lisbon_2025_optimized.png"
+				alt="ESC Cardio Genomics 2025 Banner"
+			/>
+			<button class="registration-button">Begin Presentation Upload</button>
+		</div>
+
+		<!-- Form container -->
+		<div class="form-container">
+			<h1>Oral Presentation Upload</h1>
+			<div class="form-instructions">
+				Upload the final presentation file for your <strong>oral</strong> session and confirm the session details.
+				Please follow the naming rule: <em>Abstract&nbsp;Title_Session&nbsp;Title_Session&nbsp;Time</em>.
+			</div>
+
+			<form id="presentationUploadForm" enctype="multipart/form-data" action="process/process.php" method="post">
+				<!-- GAS key (kept for future metadata routing; harmless for PHP) -->
+				<input type="hidden" name="gas_config_key" value="presentation-upload" />
+
+				<!-- ABSTRACT -->
+				<fieldset class="abstract-details">
+					<legend>Abstract Details</legend>
+
+					<div class="form-group">
+						<label for="abstract-title">Abstract Title</label>
+						<input type="text" id="abstract-title" name="abstract-title" required />
+					</div>
+				</fieldset>
+
+				<!-- PRESENTER -->
+				<fieldset class="presenter-details">
+					<legend>Presenting Author</legend>
+
+					<div class="form-group">
+						<label for="esc-id">ESC ID</label>
+						<input type="text" id="esc-id" name="esc-id" required />
+						<div class="note"><p>As shown in your My ESC account.</p></div>
+					</div>
+
+					<div class="form-row">
+						<div class="form-group">
+							<label for="presenter-name">Name</label>
+							<input type="text" id="presenter-name" name="presenter-name" required />
+						</div>
+						<div class="form-group">
+							<label for="presenter-email">Email</label>
+							<input type="email" id="presenter-email" name="presenter-email" required />
+						</div>
+					</div>
+				</fieldset>
+
+				<!-- SESSION -->
+				<fieldset class="session-details">
+					<legend>Session Information</legend>
+
+					<div class="form-group">
+						<label for="session-title">Session Title</label>
+						<input type="text" id="session-title" name="session-title" required />
+					</div>
+
+					<div class="form-row">
+						<div class="form-group">
+							<label for="session-date">Session Date</label>
+							<input type="date" id="session-date" name="session-date" required />
+						</div>
+						<div class="form-group">
+							<label for="session-time">Session Time</label>
+							<input type="time" id="session-time" name="session-time" required />
+						</div>
+						<div class="form-group">
+							<label for="session-order">Presentation Order</label>
+							<input type="text" id="session-order" name="session-order" />
+							<div class="note"><p>As in the programme (leave blank if not assigned).</p></div>
+						</div>
+					</div>
+
+					<div class="note"><p>Use the exact values as in the scientific programme.</p></div>
+				</fieldset>
+
+				<!-- FILE -->
+				<fieldset class="upload-details">
+					<legend>Upload Presentation</legend>
+
+					<div class="form-group">
+						<label for="file">Presentation File</label>
+						<div class="note">
+							<p>Accepted formats: <strong>.ppt, .pptx, .pdf</strong>. Recommended max size: 50&nbsp;MB.</p>
+							<p>File name should follow: <em>Abstract&nbsp;Title_Session&nbsp;Title_Session&nbsp;Time</em>.</p>
+						</div>
+						<input type="file" id="file" name="documents[]" required accept=".ppt,.pptx,.pdf" />
+					</div>
+
+					<div class="form-group">
+						<div class="checkbox-group">
+							<label>
+								<input type="checkbox" name="filename-confirm" required />
+								I confirm the file follows the required naming rule.
+							</label>
+						</div>
+					</div>
+				</fieldset>
+
+				<!-- COMMENTS -->
+				<div class="form-group">
+					<label for="comments">Notes to the AV Team (optional)</label>
+					<textarea id="comments" name="comments" rows="4"></textarea>
+				</div>
+
+				<!-- TERMS -->
+				<div class="form-group">
+					<div class="checkbox-group">
+						<label>
+							<input type="checkbox" name="terms" required />
+							I confirm this is the final version and agree to its processing for event operations.
+						</label>
+					</div>
+				</div>
+
+				<button type="submit">Submit Presentation</button>
+			</form>
+		</div>
+	</div>
+
+	<!-- Page JS -->
+	<script src="js/script.js" type="module"></script>
+</body>
+</html>

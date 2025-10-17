@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<meta name="description" content="ESC Cardio-Genomics 2025 — Presenting Author Confirmation / Change" />
+	<title>ESC Cardio-Genomics 2025 — Presenting Author</title>
+
+	<!-- Favicon -->
+	<link rel="icon" href="../assets/implementations/media/apple-touch-icon.png" />
+	<link rel="apple-touch-icon" href="../assets/implementations/media/apple-touch-icon.png" />
+
+	<!-- Open Graph -->
+	<meta property="og:title" content="ESC Cardio-Genomics 2025 — Presenting Author" />
+	<meta property="og:description" content="Presenting Author Confirmation / Change e-form" />
+	<meta property="og:image" content="https://dev.plura.pt/esc/cardio-genomics-2025/assets/implementations/media/intro/ESC_Image_5000x2813_Lisbon_2025_optimized.png" />
+	<meta property="og:url" content="https://dev.plura.pt/esc/cardio-genomics-2025/presenting-author/" />
+	<meta property="og:type" content="website" />
+
+	<!-- Google Fonts -->
+	<link rel="preconnect" href="https://fonts.googleapis.com" />
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+	<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet" />
+
+	<!-- Core CSS -->
+	<link rel="stylesheet" href="../assets/core/css/styles.css" />
+	<link rel="stylesheet" href="../assets/core/css/anim.css" />
+
+	<!-- Global Components CSS -->
+	<link rel="stylesheet" href="../assets/implementations/css/intro.css" />
+	<link rel="stylesheet" href="../assets/implementations/css/anim.css" />
+
+	<!-- Page CSS -->
+	<link rel="stylesheet" href="css/styles.css" />
+</head>
+
+<body>
+	<div id="app">
+		<!-- Intro (mobile-first reveal) -->
+		<div class="intro">
+			<img
+				src="../assets/implementations/media/intro/ESC_Image_5000x2813_Lisbon_2025_optimized.png"
+				alt="ESC Cardio Genomics 2025 Banner"
+			/>
+			<button class="registration-button">Begin Presenter Confirmation</button>
+		</div>
+
+		<!-- Form container -->
+		<div class="form-container">
+			<h1>Presenting Author — Confirmation / Change</h1>
+			<div class="form-instructions">
+				Please complete this form to confirm the <strong>presenting author</strong>. If the presenter has changed,
+				provide the updated details. The presenting author must be registered to attend ESC Cardio-Genomics 2025.
+			</div>
+
+			<form id="presentingAuthorForm">
+				<input type="hidden" name="gas_config_key" value="presentation-author" />
+
+				<!-- AUTHOR IDENTIFICATION -->
+				<fieldset class="author-identification">
+					<legend>Presenting Author Information</legend>
+
+					<div class="form-group">
+						<label for="esc-id">ESC ID <span aria-hidden="true">*</span></label>
+						<input type="text" id="esc-id" name="esc-id" required />
+						<div class="note">
+							<p>ESC ID of the presenting author (see your My ESC account).</p>
+						</div>
+					</div>
+
+					<div class="form-group">
+						<label for="email">Email <span aria-hidden="true">*</span></label>
+						<input type="email" id="email" name="email" required />
+						<div class="note">
+							<p>Use the same email as in your My ESC account.</p>
+						</div>
+					</div>
+
+					<div class="form-group">
+						<label>Civility <span aria-hidden="true">*</span></label>
+						<div class="radio-group">
+							<label><input type="radio" name="civility" value="Prof." required /> Prof.</label>
+							<label><input type="radio" name="civility" value="Assoc. Prof." required /> Assoc. Prof.</label>
+							<label><input type="radio" name="civility" value="Dr." required /> Dr.</label>
+							<label><input type="radio" name="civility" value="Mr." required /> Mr.</label>
+							<label><input type="radio" name="civility" value="Mrs." required /> Mrs.</label>
+							<label><input type="radio" name="civility" value="Miss" required /> Miss</label>
+							<label><input type="radio" name="civility" value="Mx." required /> Mx.</label>
+						</div>
+					</div>
+
+					<div class="form-row">
+						<div class="form-group">
+							<label for="last-name">Last Name <span aria-hidden="true">*</span></label>
+							<input type="text" id="last-name" name="last-name" required />
+						</div>
+						<div class="form-group">
+							<label for="first-name">First Name <span aria-hidden="true">*</span></label>
+							<input type="text" id="first-name" name="first-name" required />
+						</div>
+					</div>
+
+					<div class="form-group">
+						<label>Gender <span aria-hidden="true">*</span></label>
+						<div class="radio-group">
+							<label><input type="radio" name="gender" value="Male" required /> Male</label>
+							<label><input type="radio" name="gender" value="Female" required /> Female</label>
+							<label><input type="radio" name="gender" value="Other" required /> Other</label>
+						</div>
+					</div>
+
+					<div class="form-row">
+						<div class="form-group">
+							<label for="age">Age <span aria-hidden="true">*</span></label>
+							<input type="number" id="age" name="age" min="0" required />
+						</div>
+						<div class="form-group">
+							<label for="country">Country <span aria-hidden="true">*</span></label>
+							<input type="text" id="country" name="country" required />
+						</div>
+					</div>
+				</fieldset>
+
+				<!-- SESSION INFO (optional) -->
+				<fieldset class="session-details">
+					<legend>Session Information</legend>
+
+					<div class="form-group">
+						<label for="session-title">Session Title</label>
+						<input type="text" id="session-title" name="session-title" />
+					</div>
+
+					<div class="form-row">
+						<div class="form-group">
+							<label for="session-date">Session Date</label>
+							<input type="date" id="session-date" name="session-date" />
+						</div>
+						<div class="form-group">
+							<label for="session-time">Session Time</label>
+							<input type="time" id="session-time" name="session-time" />
+						</div>
+						<div class="form-group">
+							<label for="session-order">Presentation Order</label>
+							<input type="text" id="session-order" name="session-order" />
+							<div class="note"><p>As in the programme (leave blank if not assigned).</p></div>
+						</div>
+					</div>
+				</fieldset>
+
+				<!-- CONFIRMATION / CHANGE -->
+				<fieldset class="presenter-confirmation">
+					<legend>Presenter Confirmation</legend>
+
+					<div class="form-group">
+						<label>Are you the presenting author on-site?</label>
+						<div class="radio-group">
+							<label><input type="radio" name="presenting-author-on-site" value="Yes" required /> Yes — I am the presenting author</label>
+							<label><input type="radio" name="presenting-author-on-site" value="No" required /> No — a different presenting author</label>
+						</div>
+					</div>
+
+					<div class="form-row">
+						<div class="form-group">
+							<label for="new-presenter-first-name">New Presenting Author — First Name</label>
+							<input type="text" id="new-presenter-first-name" name="new-presenter-first-name" />
+						</div>
+						<div class="form-group">
+							<label for="new-presenter-last-name">New Presenting Author — Last Name</label>
+							<input type="text" id="new-presenter-last-name" name="new-presenter-last-name" />
+						</div>
+					</div>
+
+					<div class="form-row">
+						<div class="form-group">
+							<label for="new-presenter-email">New Presenting Author — Email</label>
+							<input type="email" id="new-presenter-email" name="new-presenter-email" />
+						</div>
+						<div class="form-group">
+							<label for="new-presenter-affiliation">New Presenting Author — Affiliation</label>
+							<input type="text" id="new-presenter-affiliation" name="new-presenter-affiliation" />
+						</div>
+					</div>
+
+					<div class="note">
+						<p><strong>Important:</strong> The presenting author must be registered to attend the meeting.</p>
+					</div>
+				</fieldset>
+
+				<!-- COMMENTS & CONSENT -->
+				<div class="form-group">
+					<label for="comments">Comments to the Organising Team (optional)</label>
+					<textarea id="comments" name="comments" rows="4"></textarea>
+				</div>
+
+				<div class="form-group">
+					<div class="checkbox-group">
+						<label>
+							<input type="checkbox" name="terms" required />
+							I confirm the information provided is accurate and that the presenting author is registered to attend.
+						</label>
+					</div>
+				</div>
+
+				<button type="submit">Submit</button>
+			</form>
+		</div>
+	</div>
+
+	<!-- Page JS -->
+	<script src="js/script.js" type="module"></script>
+</body>
+</html>

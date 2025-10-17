@@ -1,0 +1,8 @@
+.form-group:has(.radio-groups input[type="radio"][name="registration"] ) .note p.important {
+    background-color: var(--esccg2025-primary-color);
+    border-radius: var(--esccg2025-border-radius);
+    color: white;
+	position: sticky;
+    padding: var(--esccg2025-space-2);
+	top: 0
+}

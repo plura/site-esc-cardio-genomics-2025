@@ -1,0 +1,58 @@
+/* Intro Container (formerly .banner) */
+.intro {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	padding: var(--esccg2025-space-4);
+	background-color: #fff;
+	gap: var(--esccg2025-space-8);
+	z-index: 9999;
+  }
+  
+  /* Intro Image */
+  .intro img {
+	width: min(80vw, 100%);
+	height: auto;
+	object-fit: contain;
+  }
+  
+  /* Intro Button */
+  .intro .registration-button {
+	height: var(--esccg2025-space-8);
+	padding: var(--esccg2025-space-1) var(--esccg2025-space-3);
+	background-color: var(--esccg2025-primary-color);
+	color: #fff;
+	border: none;
+	border-radius: var(--esccg2025-border-radius);
+	font-family: var(--esccg2025-font-family);
+	font-size: var(--esccg2025-font-size);
+	font-weight: var(--esccg2025-heading-font-weight);
+	cursor: pointer;
+	transition: var(--esccg2025-transition);
+	width: 100%;
+	max-width: var(--esccg2025-form-width);
+	margin-top: var(--esccg2025-space-2);
+  }
+  
+  .intro .registration-button:hover {
+	background-color: var(--esccg2025-primary-hover-color);
+  }
+  
+  .intro .registration-button:focus-visible {
+	outline: none;
+	border-color: var(--esccg2025-focus-color);
+	box-shadow: 0 0 0 var(--esccg2025-space-1) rgba(26, 115, 232, 0.2);
+  }
+  
+  /* Desktop Styles (min-width: 1024px) */
+  @media (min-width: 1024px) {
+	.intro img {
+	  width: min(80vw, 100%);
+	}
+	
+	.intro .registration-button {
+	  display: none;
+	}
+  }
+

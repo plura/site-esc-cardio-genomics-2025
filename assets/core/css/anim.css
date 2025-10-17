@@ -1,0 +1,122 @@
+/* ===== CORE ANIMATION CATEGORIES ===== */
+
+/* 1. GLOBAL REUSABLE ANIMATIONS */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes subtlePulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.9;
+  }
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* 2. COMPONENT-SPECIFIC ANIMATIONS */
+@keyframes alertFadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes formEntrance {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes introEntrance {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes introExit {
+  to {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+}
+
+/* 3. UTILITY ANIMATIONS */
+@keyframes maintainVisibility {
+  to {
+    visibility: hidden;
+  }
+}
+
+/* ===== BASE ELEMENT STATES ===== */
+.intro,
+.form-container,
+.dynamicfields-instance {
+  opacity: 0; /* Start hidden for all animated elements */
+}
+
+/* ===== ANIMATION TRIGGERS ===== */
+.intro {
+  animation: fadeInUp 0.6s ease-out forwards;
+}
+
+/* Form container animations */
+@media (max-width: 1023.99px) {
+  #app.on .form-container {
+    animation: fadeInUp 0.6s ease-out forwards;
+  }
+}
+
+@media (min-width: 1024px) {
+  .form-container {
+    animation: fadeInUp 0.6s ease-out 0.2s forwards;
+  }
+}
+
+/* Dynamic fields animation */
+.dynamicfields-instance {
+  animation: fadeInUp 0.4s ease-out forwards;
+  animation-delay: 0.1s; /* Slight stagger effect */
+}
+
+/* ===== PERFORMANCE OPTIMIZATIONS ===== */
+.intro,
+.form-container,
+.dynamicfields-instance,
+.alert {
+  will-change: transform, opacity;
+}
+
+/* ===== PERFORMANCE OPTIMIZATIONS ===== */
+.intro,
+.form-container,
+.alert {
+  will-change: transform, opacity;
+}

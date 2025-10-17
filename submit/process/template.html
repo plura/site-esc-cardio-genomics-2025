@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ESC Cardio Genomics Submission</title>
+    <style type="text/css">
+        /**
+         * GMAIL-SAFE STYLE GUIDE
+         * ------------------------------
+         * COLORS:
+         * Primary Red: #AE1022 (ESC Brand Red)
+         * Dark Red:    #8a0d1b (Header accents)
+         * Gray-10:     #f5f5f5 (Light backgrounds)
+         * Gray-20:     #e0e0e0 (Borders)
+         * Gray-90:     #222222 (Main text)
+         * White:       #ffffff
+         *
+         * TYPOGRAPHY:
+         * Base font:   Arial, sans-serif
+         * Title:       20px/bold/uppercase
+         * Headers:     14px/bold/uppercase (#AE1022 bg)
+         * Subheaders:  12px/bold/uppercase (#8a0d1b bg)
+         * Body text:   14px
+         * Small text:  12px (footer), 10px (developer)
+         *
+         * SPACING:
+         * Base unit:    4px
+         * Container:    20px (12px mobile)
+         * Cell padding: 12px 16px (8px 12px mobile)
+         * Margins:      Multiples of 4px (16px, 24px, 32px)
+         *
+         * BREAKPOINT:
+         * Mobile:       @media (max-width: 600px)
+         * ------------------------------
+         * Note: CSS variables removed for Gmail compatibility
+         */
+        
+        /* Base Styles */
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            color: #222222;
+            background-color: #ffffff;
+        }
+        
+        table {
+            border-spacing: 0;
+            width: 100%;
+        }
+        
+        /* Container */
+        .email-container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #ffffff;
+        }
+        
+        /* Message */
+        .message {
+            text-align: center;
+            font-size: 12px;
+            color: #222222;
+            margin: 16px 0 32px 0;
+            line-height: 1.5;
+            padding: 0 16px;
+        }
+        
+        .message a {
+            color: #AE1022;
+            font-weight: bold;
+            text-decoration: underline;
+        }
+        
+        /* Logo */
+        .logo {
+            text-align: center;
+            margin-bottom: 32px;
+        }
+        
+        .logo img {
+            max-width: 300px;
+            max-height: 150px;
+        }
+        
+        /* Title */
+        .title {
+            font-size: 20px;
+            font-weight: bold;
+            text-align: center;
+            margin-bottom: 24px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: #AE1022;
+        }
+        
+        /* Form Data Table */
+        .form-data {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 0;
+        }
+        
+        .form-data td {
+            text-align: left;
+            padding: 12px 16px;
+            border-bottom: 1px solid #e0e0e0;
+            font-size: 14px;
+            vertical-align: top;
+        }
+        
+        .form-data .label-cell {
+            background-color: #f5f5f5;
+            width: 30%;
+            color: #222222;
+            font-weight: bold;
+        }
+        
+        /* Group Header */
+        .form-data .group-header {
+            background-color: #AE1022;
+            font-weight: bold;
+            padding: 12px 16px;
+            text-align: left;
+            color: #ffffff;
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            border-bottom: 1px solid #AE1022;
+        }
+        
+        /* Subgroup Header */
+        .form-data .subgroup-header {
+            background-color: #8a0d1b;
+            font-weight: bold;
+            padding: 8px 16px;
+            text-align: left;
+            color: #ffffff;
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            border-bottom: 1px solid #8a0d1b;
+        }
+        
+        /* Footer */
+        .footer {
+            background-color: #AE1022;
+            color: #ffffff;
+            text-align: center;
+            padding: 20px;
+            font-size: 14px;
+        }
+        
+        .footer a {
+            color: #ffffff;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        
+        .footer p {
+            margin: 8px 0;
+        }
+        
+        .copyright {
+            font-size: 12px;
+        }
+        
+        /* Developer Credit */
+        .developer {
+            text-align: center;
+            font-size: 10px;
+            color: #666666;
+            margin-top: 16px;
+            padding: 8px 0;
+            font-family: Arial, sans-serif;
+        }
+        
+        .developer a {
+            color: #666666;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        
+        /* Responsive Styles */
+        @media screen and (max-width: 600px) {
+            .email-container {
+                width: 100% !important;
+                padding: 12px !important;
+            }
+            
+            .form-data td {
+                display: block;
+                width: 100%;
+                padding: 8px 12px;
+            }
+            
+            .form-data .label-cell {
+                width: 100%;
+                border-bottom: none;
+                padding-bottom: 0;
+            }
+            
+            .message {
+                margin: 12px 0 24px 0;
+                padding: 0 12px;
+            }
+            
+            .logo {
+                margin-bottom: 24px;
+            }
+            
+            .developer {
+                font-size: 9px;
+                margin-top: 12px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <table role="presentation" width="100%" cellspacing="0" cellpadding="0" border="0">
+        <tr>
+            <td align="center" bgcolor="#ffffff">
+                <div class="email-container">
+
+                    <!-- Message -->
+                    <div class="message">
+                        <strong>%person-first-name%</strong>, thank you for your submission to ESC Cardio Genomics 2025. We have received your submission details and will process them shortly. This is a copy of the information you submitted for your records.
+                    </div>
+
+                    <!-- Logo -->
+                    <div class="logo">
+                        <a href="https://www.escardio.org/">
+                            <img src="https://dev.plura.pt/esc/cardio-genomics-2025/assets/implementations/media/mail/esc-logo.png" alt="ESC Cardio Genomics" width="200">
+                        </a>
+                    </div>
+                    
+                    <!-- Title -->
+                    <div class="title">
+                        ESC Cardio Genomics 2025 Submission
+                    </div>
+
+                    <!-- Form Data Table -->
+                    <table class="form-data" role="presentation" width="100%">
+                        
+                        <!-- Personal Information Group -->
+                        <tr>
+                            <td colspan="2" class="group-header">Personal Information</td>
+                        </tr>
+                        <tr>
+                            <td class="label-cell">ESC ID</td>
+                            <td>%person-esc-id%</td>
+                        </tr>
+                        <tr>
+                            <td class="label-cell">Title</td>
+                            <td>%person-title%</td>
+                        </tr>
+                        <tr>
+                            <td class="label-cell">First Name</td>
+                            <td>%person-first-name%</td>
+                        </tr>
+                        <tr>
+                            <td class="label-cell">Last Name</td>
+                            <td>%person-last-name%</td>
+                        </tr>
+                        
+                        <!-- Contact Subgroup -->
+                        <tr>
+                            <td colspan="2" class="subgroup-header">Contact Information</td>
+                        </tr>
+                        <tr>
+                            <td class="label-cell">Email</td>
+                            <td>%person-email%</td>
+                        </tr>
+                        <tr>
+                            <td class="label-cell">Mobile</td>
+                            <td>%person-mobile%</td>
+                        </tr>
+                        
+                        <!-- Demographic Subgroup -->
+                        <tr>
+                            <td colspan="2" class="subgroup-header">Demographic Information</td>
+                        </tr>
+                        <tr>
+                            <td class="label-cell">Age</td>
+                            <td>%person-age%</td>
+                        </tr>
+                        <tr>
+                            <td class="label-cell">Gender</td>
+                            <td>%person-gender%</td>
+                        </tr>
+                        <tr>
+                            <td class="label-cell">Country</td>
+                            <td>%person-country%</td>
+                        </tr>
+                        
+                        <!-- Professional Subgroup -->
+                        <tr>
+                            <td colspan="2" class="subgroup-header">Professional Information</td>
+                        </tr>
+                        <tr>
+                            <td class="label-cell">Institute/Organisation</td>
+                            <td>%person-institute%</td>
+                        </tr>
+
+                        <!-- ===== ABSTRACT INFORMATION ===== -->
+                        <tr>
+                            <td colspan="2" class="group-header">Abstract Information</td>
+                        </tr>
+                        <tr>
+                            <td class="label-cell">Title</td>
+                            <td>%abstract-title%</td>
+                        </tr>
+                        
+                        <!-- Funding Subgroup -->
+                        <tr>
+                            <td colspan="2" class="subgroup-header">Funding</td>
+                        </tr>
+                        <tr>
+                            <td class="label-cell">Funding Acknowledgements</td>
+                            <td>%abstract-funding-acknowledgements%</td>
+                        </tr>
+
+                        <!-- ===== ABSTRACT AUTHORS ===== -->
+                        <tr>
+                            <td colspan="2" class="group-header">Abstract Authors</td>
+                        </tr>
+                        <tr>
+                            <td class="label-cell">On Behalf Of</td>
+                            <td>%abstract-authors-on-behalf-of%</td>
+                        </tr>
+                        <tr>
+                            <td class="label-cell">Number of Authors</td>
+                            <td>%abstract-authors-number%</td>
+                        </tr>
+                        <tr>
+                            <td class="label-cell">Authors</td>
+                            <td>%authors%</td>
+                        </tr>
+
+                        <!-- ===== ABSTRACT CONTENT ===== -->
+                        <tr>
+                            <td colspan="2" class="group-header">Abstract Content</td>
+                        </tr>
+                        <tr>
+                            <td class="label-cell">Abstract Body</td>
+                            <td>%abstract-body%</td>
+                        </tr>
+                        <tr>
+                            <td class="label-cell">References/Citations</td>
+                            <td>%abstract-references-citations%</td>
+                        </tr>
+                        <tr>
+                            <td class="label-cell">Topics</td>
+                            <td>%abstract-topics%</td>
+                        </tr>
+                        
+                        <!-- EJPC Consent -->
+                        <tr>
+                            <td class="label-cell">EJPC Journal Consent</td>
+                            <td>%abstract-ejpc-consent%</td>
+                        </tr>
+
+                        <!-- ===== SUBMITTED DOCUMENTS ===== -->
+                        <tr>
+                            <td colspan="2" class="group-header">Submitted Documents</td>
+                        </tr>
+                        <tr>
+                            <td class="label-cell">Attachments</td>
+                            <td>
+                                %documents%
+                            </td>
+                        </tr>
+                    </table>
+
+                    <!-- Footer -->
+                    <div class="footer">
+                        <p>
+                            <a href="tel:+41229041120">+41 22 90 41 120</a> | 
+                            <a href="mailto:info@escardio.org">info@escardio.org</a>
+                        </p>
+                        <p>Follow us on social media:</p>
+                        <p>
+                            <a href="https://www.facebook.com/ESCardio/">Facebook</a> |
+                            <a href="https://twitter.com/escardio">Twitter</a> |
+                            <a href="https://www.linkedin.com/company/european-society-of-cardiology/">LinkedIn</a>
+                        </p>
+                        <p class="copyright">&copy; 2025 European Society of Cardiology. All rights reserved.</p>
+                    </div>
+
+                    <!-- Developer Credit -->
+                    <div class="developer">
+                        powered by <a href="https://plura.pt" target="_blank">Plura™</a>
+                    </div>
+                </div>
+            </td>
+        </tr>
+    </table>
+</body>
+</html>
