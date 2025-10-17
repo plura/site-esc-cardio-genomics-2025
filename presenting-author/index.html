@@ -54,155 +54,122 @@
 			</div>
 
 			<form id="presentingAuthorForm">
-				<input type="hidden" name="gas_config_key" value="presentation-author" />
+	<input type="hidden" name="gas_config_key" value="presentation-author" />
 
-				<!-- AUTHOR IDENTIFICATION -->
-				<fieldset class="author-identification">
-					<legend>Presenting Author Information</legend>
+	<!-- GROUP 1: Presenting Author Information -->
+	<!-- GROUP 1: Presenting Author Information -->
+<fieldset class="author-identification">
+	<legend>Presenting Author Information</legend>
 
-					<div class="form-group">
-						<label for="esc-id">ESC ID <span aria-hidden="true">*</span></label>
-						<input type="text" id="esc-id" name="esc-id" required />
-						<div class="note">
-							<p>ESC ID of the presenting author (see your My ESC account).</p>
-						</div>
-					</div>
+	<div class="form-row">
+		<div class="form-group">
+			<label for="esc-id">ESC ID <span aria-hidden="true">*</span></label>
+			<input type="text" id="esc-id" name="esc-id" required />
+			<div class="note">
+				<p>ESC ID of the presenting author (see your <a href="https://my.escardio.org" target="_blank" rel="noopener">My ESC account</a>).</p>
+			</div>
+		</div>
+		<div class="form-group">
+			<label for="email">Email <span aria-hidden="true">*</span></label>
+			<input type="email" id="email" name="email" required />
+			<div class="note">
+				<p>Use the same email as in your My ESC account.</p>
+			</div>
+		</div>
+	</div>
 
-					<div class="form-group">
-						<label for="email">Email <span aria-hidden="true">*</span></label>
-						<input type="email" id="email" name="email" required />
-						<div class="note">
-							<p>Use the same email as in your My ESC account.</p>
-						</div>
-					</div>
+	<div class="form-group">
+		<label>Civility <span aria-hidden="true">*</span></label>
+		<div class="radio-group">
+			<label><input type="radio" name="civility" value="Prof." required /> Prof.</label>
+			<label><input type="radio" name="civility" value="Assoc. Prof." required /> Assoc. Prof.</label>
+			<label><input type="radio" name="civility" value="Dr." required /> Dr.</label>
+			<label><input type="radio" name="civility" value="Mr." required /> Mr.</label>
+			<label><input type="radio" name="civility" value="Mrs." required /> Mrs.</label>
+			<label><input type="radio" name="civility" value="Miss" required /> Miss</label>
+			<label><input type="radio" name="civility" value="Mx." required /> Mx.</label>
+		</div>
+	</div>
 
-					<div class="form-group">
-						<label>Civility <span aria-hidden="true">*</span></label>
-						<div class="radio-group">
-							<label><input type="radio" name="civility" value="Prof." required /> Prof.</label>
-							<label><input type="radio" name="civility" value="Assoc. Prof." required /> Assoc. Prof.</label>
-							<label><input type="radio" name="civility" value="Dr." required /> Dr.</label>
-							<label><input type="radio" name="civility" value="Mr." required /> Mr.</label>
-							<label><input type="radio" name="civility" value="Mrs." required /> Mrs.</label>
-							<label><input type="radio" name="civility" value="Miss" required /> Miss</label>
-							<label><input type="radio" name="civility" value="Mx." required /> Mx.</label>
-						</div>
-					</div>
+	<div class="form-row">
+		<div class="form-group">
+			<label for="first-name">First Name <span aria-hidden="true">*</span></label>
+			<input type="text" id="first-name" name="first-name" required />
+		</div>
+		<div class="form-group">
+			<label for="last-name">Last Name <span aria-hidden="true">*</span></label>
+			<input type="text" id="last-name" name="last-name" required />
+		</div>
+	</div>
 
-					<div class="form-row">
-						<div class="form-group">
-							<label for="last-name">Last Name <span aria-hidden="true">*</span></label>
-							<input type="text" id="last-name" name="last-name" required />
-						</div>
-						<div class="form-group">
-							<label for="first-name">First Name <span aria-hidden="true">*</span></label>
-							<input type="text" id="first-name" name="first-name" required />
-						</div>
-					</div>
+	<div class="form-row">
+		<div class="form-group">
+			<label>Gender <span aria-hidden="true">*</span></label>
+			<div class="radio-group">
+				<label><input type="radio" name="gender" value="Male" required /> Male</label>
+				<label><input type="radio" name="gender" value="Female" required /> Female</label>
+				<label><input type="radio" name="gender" value="Other" required /> Other</label>
+			</div>
+		</div>
+		<div class="form-group">
+			<label for="age">Age <span aria-hidden="true">*</span></label>
+			<input type="number" id="age" name="age" min="0" required />
+		</div>
+	</div>
 
-					<div class="form-group">
-						<label>Gender <span aria-hidden="true">*</span></label>
-						<div class="radio-group">
-							<label><input type="radio" name="gender" value="Male" required /> Male</label>
-							<label><input type="radio" name="gender" value="Female" required /> Female</label>
-							<label><input type="radio" name="gender" value="Other" required /> Other</label>
-						</div>
-					</div>
+	<div class="form-row">
+		<div class="form-group">
+			<label for="country">Country <span aria-hidden="true">*</span></label>
+			<input type="text" id="country" name="country" required />
+		</div>
+		<div class="form-group">
+			<label for="institution">Institution / Hospital <span aria-hidden="true">*</span></label>
+			<input type="text" id="institution" name="institution" required />
+		</div>
+	</div>
+</fieldset>
 
-					<div class="form-row">
-						<div class="form-group">
-							<label for="age">Age <span aria-hidden="true">*</span></label>
-							<input type="number" id="age" name="age" min="0" required />
-						</div>
-						<div class="form-group">
-							<label for="country">Country <span aria-hidden="true">*</span></label>
-							<input type="text" id="country" name="country" required />
-						</div>
-					</div>
-				</fieldset>
 
-				<!-- SESSION INFO (optional) -->
-				<fieldset class="session-details">
-					<legend>Session Information</legend>
+	<!-- GROUP 2: Abstract information -->
+	<fieldset class="abstract-information">
+		<legend>Abstract information</legend>
 
-					<div class="form-group">
-						<label for="session-title">Session Title</label>
-						<input type="text" id="session-title" name="session-title" />
-					</div>
+		<div class="form-group">
+			<label for="abstract-title">Title <span aria-hidden="true">*</span></label>
+			<textarea id="abstract-title" name="abstract-title" rows="3" required></textarea>
+			<div class="note">
+				<p>A maximum of 200 characters typed in lower-case letters, except for abbreviations and study names. Do not include authors, institutions, city names, trademarks and abbreviations in the title.</p>
+			</div>
+		</div>
+	</fieldset>
 
-					<div class="form-row">
-						<div class="form-group">
-							<label for="session-date">Session Date</label>
-							<input type="date" id="session-date" name="session-date" />
-						</div>
-						<div class="form-group">
-							<label for="session-time">Session Time</label>
-							<input type="time" id="session-time" name="session-time" />
-						</div>
-						<div class="form-group">
-							<label for="session-order">Presentation Order</label>
-							<input type="text" id="session-order" name="session-order" />
-							<div class="note"><p>As in the programme (leave blank if not assigned).</p></div>
-						</div>
-					</div>
-				</fieldset>
+	<!-- GROUP 3: Submitter Information -->
+	<fieldset class="submitter-information">
+		<legend>Submitter Information</legend>
 
-				<!-- CONFIRMATION / CHANGE -->
-				<fieldset class="presenter-confirmation">
-					<legend>Presenter Confirmation</legend>
+		<div class="note">
+			<p>Please indicate the last name, first name and institution of the abstract submitter who submitted the abstract in the first place.</p>
+		</div>
 
-					<div class="form-group">
-						<label>Are you the presenting author on-site?</label>
-						<div class="radio-group">
-							<label><input type="radio" name="presenting-author-on-site" value="Yes" required /> Yes — I am the presenting author</label>
-							<label><input type="radio" name="presenting-author-on-site" value="No" required /> No — a different presenting author</label>
-						</div>
-					</div>
+		<div class="form-group">
+			<label for="submitter-information">Submitter information <span aria-hidden="true">*</span></label>
+			<textarea id="submitter-information" name="submitter-information" rows="3" placeholder="Civility, first name, last name and Institution name, city and country." required></textarea>
+		</div>
 
-					<div class="form-row">
-						<div class="form-group">
-							<label for="new-presenter-first-name">New Presenting Author — First Name</label>
-							<input type="text" id="new-presenter-first-name" name="new-presenter-first-name" />
-						</div>
-						<div class="form-group">
-							<label for="new-presenter-last-name">New Presenting Author — Last Name</label>
-							<input type="text" id="new-presenter-last-name" name="new-presenter-last-name" />
-						</div>
-					</div>
+		<div class="form-group">
+			<label for="comments">Comments</label>
+			<textarea id="comments" name="comments" rows="3"></textarea>
+		</div>
+	</fieldset>
 
-					<div class="form-row">
-						<div class="form-group">
-							<label for="new-presenter-email">New Presenting Author — Email</label>
-							<input type="email" id="new-presenter-email" name="new-presenter-email" />
-						</div>
-						<div class="form-group">
-							<label for="new-presenter-affiliation">New Presenting Author — Affiliation</label>
-							<input type="text" id="new-presenter-affiliation" name="new-presenter-affiliation" />
-						</div>
-					</div>
+	<!-- Optional copy to self (UI only; not required) -->
+	<div class="form-group">
+		<label><input type="checkbox" name="send-copy" /> Send me a copy of my responses</label>
+	</div>
 
-					<div class="note">
-						<p><strong>Important:</strong> The presenting author must be registered to attend the meeting.</p>
-					</div>
-				</fieldset>
+	<button type="submit">Submit</button>
+</form>
 
-				<!-- COMMENTS & CONSENT -->
-				<div class="form-group">
-					<label for="comments">Comments to the Organising Team (optional)</label>
-					<textarea id="comments" name="comments" rows="4"></textarea>
-				</div>
-
-				<div class="form-group">
-					<div class="checkbox-group">
-						<label>
-							<input type="checkbox" name="terms" required />
-							I confirm the information provided is accurate and that the presenting author is registered to attend.
-						</label>
-					</div>
-				</div>
-
-				<button type="submit">Submit</button>
-			</form>
 		</div>
 	</div>
 

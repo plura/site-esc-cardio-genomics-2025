@@ -1,25 +1,73 @@
 const CONFIG = [
 	// ===== Presenting Author =====
-  {
-    key: "presentation-author",
-    sheetId: "1pEP8pXuRxKUlhhZwVCyDwtH7jUeNNpjeIzJFW3VqIfA",
-    sheetName: "Presenting Author",
-    allowedDomains: ["dev.plura.pt", "plura.pt", "www.plura.pt"],
+	{
+		key: "presentation-author",
+		sheetId: "1pEP8pXuRxKUlhhZwVCyDwtH7jUeNNpjeIzJFW3VqIfA",
+		sheetName: "Presenting Author",
+		allowedDomains: ["dev.plura.pt", "plura.pt", "www.plura.pt"],
 
-    requiredFields: ["esc-id","email","civility","first-name","last-name","gender","age","country","presenting-author-on-site"],
+		// Required fields shown as required in the form
+		requiredFields: [
+			"esc-id", "email", "civility", "first-name", "last-name",
+			"gender", "age", "country", "institution",
+			"abstract-title",
+			"submitter-information"
+		],
 
-    fieldOrder: [
-      "esc-id","email","civility","last-name","first-name","gender","age","country",
-      "session-title","session-date","session-time","session-order",
-      "presenting-author-on-site",
-      "new-presenter-first-name","new-presenter-last-name","new-presenter-email","new-presenter-affiliation",
-      "terms","timestamp","comments"
-    ],
+		// Column order mirrors the form grouping
+		fieldOrder: [
+			// Group 1 — Presenting Author Information
+			"esc-id", "email", "civility", "last-name", "first-name", "gender", "age", "country", "institution",
 
-    transforms: { "terms": { type: "bool" }, "presenting-author-on-site": { type: "bool" } },
-    addTimestamp: true,
-    logErrors: true
-  },
+			// Group 2 — Abstract information
+			"abstract-title",
+
+			// Group 3 — Submitter Information
+			"submitter-information",
+
+			// Auto
+			"timestamp",
+
+			//comment
+			"comments"
+
+		],
+
+		addTimestamp: true,
+		logErrors: true
+	},
+
+	// ===== Presentation Upload =====
+	{
+		key: "presentation-upload",
+		sheetId: "1pEP8pXuRxKUlhhZwVCyDwtH7jUeNNpjeIzJFW3VqIfA",
+		sheetName: "Presentation Upload",
+		allowedDomains: ["dev.plura.pt", "plura.pt", "www.plura.pt"],
+
+		requiredFields: [
+			"abstract-title",
+			"esc-id", "presenter-name", "presenter-email",
+			"filename-confirm", "terms"
+		],
+
+		fieldOrder: [
+			"esc-id", "presenter-name", "presenter-email",
+			"abstract-title",
+			"filename-confirm", "terms",
+			"timestamp"
+		],
+
+		transforms: {
+			"filename-confirm": { type: "bool" },
+			"terms": { type: "bool" }
+		},
+
+		addTimestamp: true,
+		logErrors: true
+	},
+
+
+
 
 	// ===== Registration (reformatted) =====
 	{
@@ -31,35 +79,35 @@ const CONFIG = [
 		// Required fields (grouped)
 		requiredFields: [
 			// Personal Info
-			"person-esc-id","person-title","person-first-name","person-last-name","person-email","person-mobile","person-age","person-gender",
+			"person-esc-id", "person-title", "person-first-name", "person-last-name", "person-email", "person-mobile", "person-age", "person-gender",
 
 			// Personal Address
-			"address","address-city","address-postcode","address-country",
+			"address", "address-city", "address-postcode", "address-country",
 
 			// Professional Info
-			"prof-institute","prof-address","prof-address-city","prof-address-postcode","prof-address-country",
+			"prof-institute", "prof-address", "prof-address-city", "prof-address-postcode", "prof-address-country",
 
 			// Registration & Consent
-			"registration","terms"
+			"registration", "terms"
 		],
 
 		// Field order (grouped)
 		fieldOrder: [
 			// Personal
-			"person-esc-id","person-title","person-first-name","person-last-name","person-email","person-mobile","person-age","person-gender",
+			"person-esc-id", "person-title", "person-first-name", "person-last-name", "person-email", "person-mobile", "person-age", "person-gender",
 
 			// Personal Address
-			"address","address-city","address-postcode","address-state","address-country",
+			"address", "address-city", "address-postcode", "address-state", "address-country",
 
 			// Professional
-			"prof-institute","prof-department","prof-specialty",
-			"prof-address","prof-address-city","prof-address-postcode","prof-address-state","prof-address-country",
+			"prof-institute", "prof-department", "prof-specialty",
+			"prof-address", "prof-address-city", "prof-address-postcode", "prof-address-state", "prof-address-country",
 
 			// Registration
-			"registration","workshops",
+			"registration", "workshops",
 
 			// Timestamp before comments (per legacy config)
-			"timestamp","comments"
+			"timestamp", "comments"
 		],
 
 		transforms: { "workshops": { type: "join", sep: ", " }, "terms": { type: "bool" } },

@@ -54,110 +54,77 @@
 			</div>
 
 			<form id="presentationUploadForm" enctype="multipart/form-data" action="process/process.php" method="post">
-				<!-- GAS key (kept for future metadata routing; harmless for PHP) -->
-				<input type="hidden" name="gas_config_key" value="presentation-upload" />
+	<!-- GAS key (kept for future metadata routing; harmless for PHP) -->
+	<input type="hidden" name="gas_config_key" value="presentation-upload" />
 
-				<!-- ABSTRACT -->
-				<fieldset class="abstract-details">
-					<legend>Abstract Details</legend>
+	<!-- ABSTRACT -->
+	<fieldset class="abstract-details">
+		<legend>Abstract Details</legend>
 
-					<div class="form-group">
-						<label for="abstract-title">Abstract Title</label>
-						<input type="text" id="abstract-title" name="abstract-title" required />
-					</div>
-				</fieldset>
+		<div class="form-group">
+			<label for="abstract-title">Abstract Title</label>
+			<input type="text" id="abstract-title" name="abstract-title" required />
+		</div>
+	</fieldset>
 
-				<!-- PRESENTER -->
-				<fieldset class="presenter-details">
-					<legend>Presenting Author</legend>
+	<!-- PRESENTER -->
+	<fieldset class="presenter-details">
+		<legend>Presenting Author</legend>
 
-					<div class="form-group">
-						<label for="esc-id">ESC ID</label>
-						<input type="text" id="esc-id" name="esc-id" required />
-						<div class="note"><p>As shown in your My ESC account.</p></div>
-					</div>
+		<div class="form-group">
+			<label for="esc-id">ESC ID</label>
+			<input type="text" id="esc-id" name="esc-id" required />
+			<div class="note"><p>As shown in your My ESC account.</p></div>
+		</div>
 
-					<div class="form-row">
-						<div class="form-group">
-							<label for="presenter-name">Name</label>
-							<input type="text" id="presenter-name" name="presenter-name" required />
-						</div>
-						<div class="form-group">
-							<label for="presenter-email">Email</label>
-							<input type="email" id="presenter-email" name="presenter-email" required />
-						</div>
-					</div>
-				</fieldset>
+		<div class="form-row">
+			<div class="form-group">
+				<label for="presenter-name">Name</label>
+				<input type="text" id="presenter-name" name="presenter-name" required />
+			</div>
+			<div class="form-group">
+				<label for="presenter-email">Email</label>
+				<input type="email" id="presenter-email" name="presenter-email" required />
+			</div>
+		</div>
+	</fieldset>
 
-				<!-- SESSION -->
-				<fieldset class="session-details">
-					<legend>Session Information</legend>
+	<!-- FILE -->
+	<fieldset class="upload-details">
+		<legend>Upload Presentation</legend>
 
-					<div class="form-group">
-						<label for="session-title">Session Title</label>
-						<input type="text" id="session-title" name="session-title" required />
-					</div>
+		<div class="form-group">
+			<label for="file">Presentation File</label>
+			<div class="note">
+				<p>Accepted formats: <strong>.ppt, .pptx, .pdf</strong>. Recommended max size: 50&nbsp;MB.</p>
+				<p>File name should follow: <em>Abstract&nbsp;Title_Session&nbsp;Title_Session&nbsp;Time</em>.</p>
+			</div>
+			<input type="file" id="file" name="documents[]" required accept=".ppt,.pptx,.pdf" />
+		</div>
 
-					<div class="form-row">
-						<div class="form-group">
-							<label for="session-date">Session Date</label>
-							<input type="date" id="session-date" name="session-date" required />
-						</div>
-						<div class="form-group">
-							<label for="session-time">Session Time</label>
-							<input type="time" id="session-time" name="session-time" required />
-						</div>
-						<div class="form-group">
-							<label for="session-order">Presentation Order</label>
-							<input type="text" id="session-order" name="session-order" />
-							<div class="note"><p>As in the programme (leave blank if not assigned).</p></div>
-						</div>
-					</div>
+		<div class="form-group">
+			<div class="checkbox-group">
+				<label>
+					<input type="checkbox" name="filename-confirm" required />
+					I confirm the file follows the required naming rule.
+				</label>
+			</div>
+		</div>
+	</fieldset>
 
-					<div class="note"><p>Use the exact values as in the scientific programme.</p></div>
-				</fieldset>
+	<!-- TERMS -->
+	<div class="form-group">
+		<div class="checkbox-group">
+			<label>
+				<input type="checkbox" name="terms" required />
+				I confirm this is the final version and agree to its processing for event operations.
+			</label>
+		</div>
+	</div>
 
-				<!-- FILE -->
-				<fieldset class="upload-details">
-					<legend>Upload Presentation</legend>
+	<button type="submit">Submit Presentation</button>
+</form>
 
-					<div class="form-group">
-						<label for="file">Presentation File</label>
-						<div class="note">
-							<p>Accepted formats: <strong>.ppt, .pptx, .pdf</strong>. Recommended max size: 50&nbsp;MB.</p>
-							<p>File name should follow: <em>Abstract&nbsp;Title_Session&nbsp;Title_Session&nbsp;Time</em>.</p>
-						</div>
-						<input type="file" id="file" name="documents[]" required accept=".ppt,.pptx,.pdf" />
-					</div>
-
-					<div class="form-group">
-						<div class="checkbox-group">
-							<label>
-								<input type="checkbox" name="filename-confirm" required />
-								I confirm the file follows the required naming rule.
-							</label>
-						</div>
-					</div>
-				</fieldset>
-
-				<!-- COMMENTS -->
-				<div class="form-group">
-					<label for="comments">Notes to the AV Team (optional)</label>
-					<textarea id="comments" name="comments" rows="4"></textarea>
-				</div>
-
-				<!-- TERMS -->
-				<div class="form-group">
-					<div class="checkbox-group">
-						<label>
-							<input type="checkbox" name="terms" required />
-							I confirm this is the final version and agree to its processing for event operations.
-						</label>
-					</div>
-				</div>
-
-				<button type="submit">Submit Presentation</button>
-			</form>
 		</div>
 	</div>
 
